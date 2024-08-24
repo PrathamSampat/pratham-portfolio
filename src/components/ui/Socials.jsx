@@ -2,9 +2,9 @@ import Link from "next/link"
 import { FaGithub, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 
 const social = [
-    { icon: <FaGithub />, path: '' },
-    { icon: <FaLinkedinIn />, path: '' },
-    { icon: <FaInstagram />, path: '' },
+    { icon: <FaGithub />, path: 'https://github.com/PrathamSampat' },
+    { icon: <FaLinkedinIn />, path: 'https://www.linkedin.com/in/pratham-sampat-626791218/' },
+    { icon: <FaInstagram />, path: 'https://www.instagram.com/prathamsampat/' },
 ]
 
 const Socials = ({ containerStyles, iconStyles }) => {
