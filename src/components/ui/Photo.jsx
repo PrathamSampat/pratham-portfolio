@@ -17,7 +17,7 @@ const Photo = () => {
                 }}
             >
                 <motion.div
-                    className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+                    className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute rounded-full overflow-hidden"
                     initial={{ opacity: 0 }}
                     animate={{
                         opacity: 1,
@@ -29,13 +29,13 @@ const Photo = () => {
                     }}
                 >
                     <Image
-                        src="/photo.jpg"
+                        src="/personalphoto.png"
                         priority
                         quality={100}
                         fill
                         alt="profile picture"
-                        className="object-contain"
-                    ></Image>
+                        className="object-cover"
+                    />
                 </motion.div>
 
                 {/* circle */}
@@ -63,7 +63,7 @@ const Photo = () => {
                             repeat: Infinity,
                             repeatType: "reverse",
                         }}
-                    ></motion.circle>
+                    />
                 </motion.svg>
             </motion.div>
         </div>
