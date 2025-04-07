@@ -16,8 +16,9 @@ const Photo = () => {
                     },
                 }}
             >
+                {/* Clipped container */}
                 <motion.div
-                    className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute rounded-full overflow-hidden"
+                    className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute rounded-full overflow-hidden flex items-center justify-center"
                     initial={{ opacity: 0 }}
                     animate={{
                         opacity: 1,
@@ -25,20 +26,28 @@ const Photo = () => {
                             delay: 1.7,
                             duration: 0.4,
                             ease: "easeInOut",
-                        },
-                    }}
+                        }}
+                    }
                 >
-                    <Image
-                        src="/personalphoto.png"
-                        priority
-                        quality={100}
-                        fill
-                        alt="profile picture"
-                        className="object-cover"
-                    />
+                    {/* Smaller Image */}
+                    <motion.div 
+                        className="relative w-full h-full" 
+                        style={{
+                            transform: "scale(0.8) translateY(15px)", // Adjust the vertical position further
+                        }}
+                    >
+                        <Image
+                            src="/personal3.png"
+                            priority
+                            quality={100}
+                            fill
+                            alt="profile picture"
+                            className="object-cover"
+                        />
+                    </motion.div>
                 </motion.div>
 
-                {/* circle */}
+                {/* Animated circle */}
                 <motion.svg
                     className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]"
                     fill="transparent"

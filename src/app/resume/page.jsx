@@ -17,6 +17,7 @@ import {
     SiMongodb,
     SiTypescript,
     SiFlask,
+    SiRuby
 } from 'react-icons/si'
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
@@ -156,8 +157,8 @@ const skills = {
             name: 'java'
         },
         {
-            icon: <SiTypescript />,
-            name: 'typescript'
+            icon: <SiRuby />,
+            name: 'ruby'
         },
         {
             icon: <SiTailwindcss />,
