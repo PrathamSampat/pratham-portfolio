@@ -26,23 +26,24 @@ const Photo = () => {
                             delay: 1.7,
                             duration: 0.4,
                             ease: "easeInOut",
-                        }}
+                        }
+                    }
                     }
                 >
                     {/* Smaller Image */}
-                    <motion.div 
-                        className="relative w-full h-full" 
+                    <motion.div
+                        className="relative w-full h-full"
                         style={{
-                            transform: "scale(0.8) translateY(15px)", // Adjust the vertical position further
+                            transform: "scale()", // Adjust the vertical position further
                         }}
                     >
                         <Image
-                            src="/personal3.png"
+                            src="/profile_photo.png"
                             priority
                             quality={100}
                             fill
                             alt="profile picture"
-                            className="object-cover"
+                            className="object-cover object-[50%_12%] translate-y-[45px]"
                         />
                     </motion.div>
                 </motion.div>
