@@ -1,6 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "react-hot-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,8 +15,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaStar } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 const info = [
@@ -35,8 +36,43 @@ const info = [
     },
 ];
 
+const SparkleTrail = () => {
+    return (
+        <motion.div
+            initial={{ opacity: 1 }}
+            animate={{ opacity: [1, 0.5, 0], scale: [1, 1.2, 1], y: [-2, -5, -8] }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="absolute right-4 top-1/2 -translate-y-1/2"
+        >
+            <FaStar className="text-yellow-400 text-xs animate-ping" />
+        </motion.div>
+    );
+};
+
+const PaperPlane = ({ isFlying }) => {
+    return (
+        <AnimatePresence>
+            {isFlying && (
+                <motion.div
+                    initial={{ x: 200, opacity: 1 }}
+                    animate={{ x: 500, opacity: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    className="absolute left-0 top-1/2 -translate-y-1/2"
+                >
+                    <div className="relative">
+                        <FaPaperPlane className="text-accent text-xl" />
+                        <SparkleTrail />
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
+    );
+};
+
 const Contact = () => {
     const form = useRef(null);
+    const [isFlying, setIsFlying] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -51,12 +87,17 @@ const Contact = () => {
                 "Cqn96CvPptklkx4Xq"
             )
             .then(
-                (result) => {
-                    alert("Message sent!");
+                () => {
+                    setIsFlying(true);
+                    toast.success("Message sent successfully!");
+
+                    setTimeout(() => {
+                        setIsFlying(false);
+                    }, 1500);
                 },
                 (error) => {
                     console.error(error.text);
-                    alert("Something went wrong.");
+                    toast.error("Something went wrong.");
                 }
             );
     };
@@ -64,7 +105,7 @@ const Contact = () => {
     return (
         <motion.section
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeIn" } }}
+            animate={{ opacity: 1, transition: { delay: 0.4, duration: 1, ease: "easeIn" } }}
             className="py-6"
         >
             <div className="container mx-auto">
@@ -73,12 +114,10 @@ const Contact = () => {
                         <form
                             ref={form}
                             onSubmit={sendEmail}
-                            className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+                            className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl relative overflow-hidden"
                         >
                             <h3 className="text-4xl text-accent">Let&apos;s Work together</h3>
-                            <p className="text-white/60">
-                                Feel free to reach out through this form.
-                            </p>
+                            <p className="text-white/60">Feel free to reach out through this form.</p>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <Input type="text" name="firstname" placeholder="Firstname" required />
@@ -109,9 +148,12 @@ const Contact = () => {
                                 required
                             />
 
-                            <Button className="max-w-40" size="default" type="submit">
-                                Send Message
-                            </Button>
+                            <div className="relative w-fit">
+                                <Button className="max-w-40" size="default" type="submit">
+                                    Send Message
+                                </Button>
+                                <PaperPlane isFlying={isFlying} />
+                            </div>
                         </form>
                     </div>
 
