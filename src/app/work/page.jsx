@@ -128,11 +128,14 @@ const Work = () => {
                             {/* Slides */}
                             {projects.map((project, index) => (
                                 <SwiperSlide key={index} className="w-full">
-                                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                                        <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                                        <div>
-                                            <Image src={project.image} fill className="object-cover" alt="" />
-                                        </div>
+                                    <div className="relative w-full h-[460px] overflow-hidden bg-black/10 group">
+                                        <div className="absolute inset-0 z-10 bg-black/10" />
+                                        <Image
+                                            src={project.image}
+                                            alt=""
+                                            fill
+                                            className="object-contain object-center"
+                                        />
                                     </div>
                                 </SwiperSlide>
                             ))}
