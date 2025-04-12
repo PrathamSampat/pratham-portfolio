@@ -20,13 +20,20 @@ const Home = () => {
               various programming languages and technologies.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2">
-                <span>Download CV</span>
-                <FiDownload className='text-xl' />
-              </Button>
+              <a
+                href="https://drive.google.com/file/d/19Fu1NmmZ0fXNsAKVw5h--PiJ6iLgj9UO/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase flex items-center gap-2"
+                >
+                  <span>Download CV</span>
+                  <FiDownload className="text-xl" />
+                </Button>
+              </a>
               <div className="mb-8 xl:mb-0">
                 <Socials
                   containerStyles="flex gap-6"

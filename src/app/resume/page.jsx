@@ -8,7 +8,9 @@ import {
     FaNodeJs,
     FaVuejs,
     FaJava,
-    FaJs
+    FaJs,
+    FaAws,
+    FaDocker
 } from 'react-icons/fa'
 
 import {
@@ -27,7 +29,7 @@ import { motion } from 'framer-motion';
 
 const about = {
     title: 'About Me',
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit quos error eum atque, enim voluptatibus sit itaque hic voluptate illum possimus nesciunt animi mollitia neque, numquam consequatur autem culpa perferendis.",
+    description: '"Technology is my tool, creativity my guide. I believe in building solutions that bridge gaps, connect ideas, and drive progress in ways that matter."',
     info: [
         {
             fieldName: 'Name',
@@ -63,7 +65,7 @@ const about = {
 const experience = {
     icon: '/photo.jpg',
     title: 'My Experience',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt laudantium voluptatibus numquam quod beatae ab amet asperiores nam, voluptates, maiores natus ipsa consequatur ut? Totam architecto et dolore quod quos.',
+    description: '"Code evolves, and so do I — one project, one pull request, one breakthrough at a time."',
     items: [
         {
             company: 'Metron Security',
@@ -91,7 +93,7 @@ const experience = {
 const education = {
     icon: '/photo.jpg',
     title: 'My Education',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt laudantium voluptatibus numquam quod beatae ab amet asperiores nam, voluptates, maiores natus ipsa consequatur ut? Totam architecto et dolore quod quos.',
+    description: '"The classroom set the foundation, but curiosity built the framework."',
     items: [
         {
             institution: 'Vishwakarma University',
@@ -110,7 +112,7 @@ const education = {
 
 const skills = {
     title: 'My Skills',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt laudantium voluptatibus numquam quod beatae ab amet asperiores nam, voluptates, maiores natus ipsa consequatur ut? Totam architecto et dolore quod quos.',
+    description: '"From frontend pixels to backend logic, I build with intent and ship with precision."',
     skillList: [
         {
             icon: <FaHtml5 />,
@@ -168,6 +170,14 @@ const skills = {
             icon: <SiFlask />,
             name: 'flask'
         },
+        {
+            icon: <FaAws />,
+            name: 'aws'
+        },
+        {
+            icon: <FaDocker />,
+            name: 'docker'
+        },
     ]
 }
 
@@ -207,7 +217,7 @@ const resume = () => {
                             </div>
                         </TabsContent>
                         <TabsContent value="education" className='w-full'>
-                            <div className='felxflex-col gap-[30px] xl:text-left text-center'>
+                            <div className='flex flex-col gap-[30px] xl:text-left text-center'>
                                 <h3 className='text-4xl font-bold'>{education.title}</h3>
                                 <p className='max-w-[600px] text-white/60 mx-auto xl:mx-0'>{education.description}</p>
                                 <ScrollArea className='h-[400px]'>

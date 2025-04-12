@@ -26,7 +26,7 @@ const projects = [
       "Pawsitively Safe is a full-stack MERN based web and mobile application that provides a comprehensive solution for animal safety, health monitoring, adoption, and fostering. Developed as part of my final year degree project, this app integrates modern IoT capabilities with a robust backend to track animal vitals such as temperature, heart rate, and activity using sensors like MAX30100, MPU6050, and DHT11 connected via NodeMCU and ESP8266 modules. The frontend, built with React.js, offers user-friendly interfaces for real-time reporting, adoption listings, and smart analytics dashboards, while the backend leverages Node.js and Express.js to manage APIs, user data, and device integration securely. MongoDB stores structured information about animals, reports, users, and NGOs, supporting scalable and flexible data operations. This project showcases advanced full-stack development skills, real-time data handling, RESTful API design, third-party service integration, and responsive UI/UX. Pawsitively Safe was awarded First Prize in my degree final year project showcase for its innovation, technical depth, and social impact.",
     stack: ["MONGO DB", "EXPRESS.JS", "REACT.JS", "NODE.JS"],
     image: "/pawsitivelysafe.png",
-    github: "https://www.sample.com",
+    github: "https://github.com/PrathamSampat/Pawsitively-safe",
   },
   {
     num: "02",
