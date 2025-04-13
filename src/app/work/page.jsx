@@ -82,7 +82,7 @@ const Work = () => {
                 {project.category} project
               </h2>
               <p className="text-white/60">{project.description}</p>
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-4">
                 {project.stack.map((item, index) => (
                   <li key={index} className="text-xl text-accent">
                     {item}
@@ -125,18 +125,17 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              className="h-[360px] sm:h-[400px] xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
               {/* Slides */}
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="relative w-full h-[460px] overflow-hidden group">
-                    <div className="absolute inset-0 z-10" />
+                  <div className="relative w-full h-[300px] sm:h-[400px] xl:h-[460px] overflow-hidden group">
                     <Image
                       src={project.image}
-                      alt=""
-                      fill
+                      alt="Project preview"
+                      layout="fill"
                       className="object-contain object-center"
                     />
                   </div>
