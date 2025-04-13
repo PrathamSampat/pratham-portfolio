@@ -272,17 +272,14 @@ const resume = () => {
                                     {about.description}
                                 </p>
 
-                                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px]">
+                                <div className="max-w-[620px] w-full mx-auto space-y-4 text-base sm:text-lg">
                                     {about.info.map((item, index) => (
-                                        <li
-                                            key={index}
-                                            className="flex items-center justify-center xl:justify-start gap-4"
-                                        >
-                                            <span className="text-white/60">{item.fieldName}</span>
-                                            <span className="text-xl">{item.fieldValue}</span>
-                                        </li>
+                                        <div key={index} className="flex justify-between items-start flex-wrap gap-y-1">
+                                            <span className="text-white/60 w-[40%]">{item.fieldName}</span>
+                                            <span className="text-xl text-right w-[60%] break-words">{item.fieldValue}</span>
+                                        </div>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
                         </TabsContent>
                     </div>
