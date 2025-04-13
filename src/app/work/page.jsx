@@ -41,7 +41,7 @@ const projects = [
   },
   {
     num: "03",
-    category: "full-stack",
+    category: "python-AI",
     title: "project 3",
     description:
       "AI Virtual Mouse is an innovative application that replaces traditional hardware peripherals with an AI-driven, gesture-controlled interface. Utilizing computer vision and machine learning techniques, the system employs the MediaPipe library for real-time hand tracking, recognizing various gestures to perform actions such as cursor movement, clicking, scrolling, and system controls like brightness and volume adjustment. Developed using Python and OpenCV, this project showcases proficiency in integrating AI models with real-time video processing to enhance human-computer interaction.",
