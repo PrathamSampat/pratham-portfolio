@@ -125,7 +125,7 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="h-[360px] sm:h-[400px] xl:h-[520px] mb-12"
+              className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
               {/* Slides */}
