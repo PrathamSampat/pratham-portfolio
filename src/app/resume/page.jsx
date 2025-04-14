@@ -36,10 +36,6 @@ const about = {
             fieldValue: 'Pratham Sampat'
         },
         {
-            fieldName: 'Phone Number',
-            fieldValue: '+91 9867292169'
-        },
-        {
             fieldName: 'Experience',
             fieldValue: '2 years'
         },
@@ -115,40 +111,48 @@ const skills = {
     description: '"From frontend pixels to backend logic, I build with intent and ship with precision."',
     skillList: [
         {
-            icon: <FaHtml5 />,
-            name: 'html 5'
-        },
-        {
-            icon: <FaCss3 />,
-            name: 'css 3'
-        },
-        {
-            icon: <FaJs />,
-            name: 'javascript'
-        },
-        {
             icon: <FaReact />,
             name: 'react.js'
-        },
-        {
-            icon: <SiNextdotjs />,
-            name: 'next.js'
-        },
-        {
-            icon: <FaVuejs />,
-            name: 'vue.js'
         },
         {
             icon: <FaNodeJs />,
             name: 'node.js'
         },
         {
-            icon: <SiMongodb />,
-            name: 'mongo db'
+            icon: <SiNextdotjs />,
+            name: 'next.js'
+        },
+        {
+            icon: <FaAws />,
+            name: 'aws'
+        },
+        {
+            icon: <FaDocker />,
+            name: 'docker'
+        },
+        {
+            icon: <FaVuejs />,
+            name: 'vue.js'
         },
         {
             icon: <SiTypescript />,
             name: 'typescript'
+        },
+        {
+            icon: <FaJs />,
+            name: 'javascript'
+        },
+        {
+            icon: <SiMongodb />,
+            name: 'mongo db'
+        },
+        {
+            icon: <FaHtml5 />,
+            name: 'html 5'
+        },
+        {
+            icon: <FaCss3 />,
+            name: 'css 3'
         },
         {
             icon: <FaPython />,
@@ -169,14 +173,6 @@ const skills = {
         {
             icon: <SiFlask />,
             name: 'flask'
-        },
-        {
-            icon: <FaAws />,
-            name: 'aws'
-        },
-        {
-            icon: <FaDocker />,
-            name: 'docker'
         },
     ]
 }
@@ -246,18 +242,13 @@ const resume = () => {
                                 </div>
                                 <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
                                     {skills.skillList.map((skill, index) => {
-                                        return <li key={index}>
-                                            <TooltipProvider>
-                                                <Tooltip>
-                                                    <TooltipTrigger className='w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group'>
-                                                        <div className='text-6xl group-hover:text-accent transition-all duration-300'>{skill.icon}</div>
-                                                    </TooltipTrigger>
-                                                    <TooltipContent>
-                                                        <p className='capitalize'>{skill.name}</p>
-                                                    </TooltipContent>
-                                                </Tooltip>
-                                            </TooltipProvider>
+                                        return <li key={index} className='bg-[#232329] rounded-xl flex flex-col items-center justify-center py-6 gap-4'>
+                                            <div className='text-6xl text-white group-hover:text-accent transition-all duration-300'>
+                                                {skill.icon}
+                                            </div>
+                                            <p className='capitalize text-white/80 text-sm text-center'>{skill.name}</p>
                                         </li>
+
                                     })}
                                 </ul>
                             </div>

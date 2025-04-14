@@ -15,15 +15,10 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaStar } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaStar } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 const info = [
-    {
-        icon: <FaPhoneAlt />,
-        title: "Phone",
-        description: "+91 9867292169",
-    },
     {
         icon: <FaEnvelope />,
         title: "Email",
@@ -32,7 +27,7 @@ const info = [
     {
         icon: <FaMapMarkerAlt />,
         title: "Address",
-        description: "Tilekar Nagar, Pune, India",
+        description: "Pune, India",
     },
 ];
 
@@ -123,7 +118,7 @@ const Contact = () => {
                                 <Input type="text" name="firstname" placeholder="Firstname" required />
                                 <Input type="text" name="lastname" placeholder="Lastname" required />
                                 <Input type="email" name="email" placeholder="Email address" required />
-                                <Input type="text" name="phone" placeholder="Phone number" />
+                                <Input type="number" name="phone" placeholder="Phone number" />
                             </div>
 
                             <Select name="service">
